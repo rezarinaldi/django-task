@@ -1,8 +1,9 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, View
 
+# from .methods import do_something
 from .models import Note
+from .tasks import task_do_something
 
 
 class NoteListView(ListView):
@@ -25,5 +26,7 @@ class NoteCreateView(View):
         title = request.POST.get("title")
         content = request.POST.get("content")
 
-        Note.objects.create(title=title, content=content)
+        # do_something()
+        task_do_something() # jalan di background -> Queue (antrian)
+        Note.objects.create(title=title, content=content, user=request.user)
         return redirect("index")

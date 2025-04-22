@@ -76,6 +76,7 @@ isort .
 - Halaman admin akan berjalan di http://127.0.0.1:8000/admin
 
 ### Source
+- [Huey](https://huey.readthedocs.io/en/latest/)
 - [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/index.html)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Black](https://black.readthedocs.io/en/stable/)
